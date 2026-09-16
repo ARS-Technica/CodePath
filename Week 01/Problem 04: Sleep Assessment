@@ -21,16 +21,18 @@ You're a sleep prodigy!
 You got a good night's rest!
 """
 
-def halve_lst(lst):
-    result = []
+def sleep_assessment(hours):
+    if hours < 8:
+        return "Oof, go back to bed!"
+    elif hours >= 8 and hours <= 10:
+        return "You got a good night's rest!"
+    else:
+        return "You're a sleep prodigy!"
 
-    for number in lst:
-        halved = number/2
-        result.append(halved)
-
-    return result
-
-halve_lst([2,4,6,8]) # [1,2,3,4]
+# sleep_assessment(10)
+# sleep_assessment(4)
+# sleep_assessment(12)
+sleep_assessment(9)
 
 
 """
