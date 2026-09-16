@@ -1,0 +1,21 @@
+"""
+Problem 13: Total Sum
+Write a function sum_positive_range() that returns the sum of numbers from 1 to a given stop value (inclusive).
+
+def sum_positive_range(stop):
+    pass
+Example Usage: sum = sum_positive_range(6)
+Example Result: sum = 21
+
+✍️ Write this down: once your function works, run it on sum_positive_range(14) and write down what it returns. You'll need it for the special activity at the end of today's session.
+"""
+
+def sum_positive_range(stop):
+    total = 0
+    for num in range(1, stop + 1):
+        total += num
+    return total  
+
+
+sum_positive_range(14)
+
