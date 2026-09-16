@@ -1,0 +1,24 @@
+"""
+Problem 11: Length of List (Version 2)
+Without using the built-in len() function, write a function list_length() that takes in a list lst as a parameter and returns the length of the list.
+
+def list_length(lst):
+    pass
+Example Usage:
+
+lst = [2,4,6,8,10]
+length = list_length(lst)
+print(length)
+Example Output: 5
+"""
+
+def list_length(lst):
+    total = 0
+    for num in lst:
+        total += 1
+    return total
+
+lst = [2,4,6,8,10]
+length = list_length(lst)
+print(length)
+
