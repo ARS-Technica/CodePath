@@ -1,0 +1,93 @@
+# Write a function above_threshold() that takes in a list of integers 
+# lst and an integer threshold as parameters. 
+# The function iterates through the original list and returns a new 
+# list containing only numbers that are greater than threshold.
+
+# def above_threshold(lst, threshold):
+#     pass
+
+# Input: lst = [8,2,13,11,4,10,14], threshold = 10
+# Output: [13,11,14]
+
+## Understanding
+## -------------
+
+# - Can the lst be null? Yes
+# - Can the lst be empty ( [] ) Yes
+# - Can the lst have duplicate numbers? Yes
+# - Can the lst include negative numbers? Yes
+# - Are all the items in the lst guaranteed to be numbers? Yes
+# - Can the threshold be greater than all of the elements in the list? Yes
+# - Does the list include both integers and floats? Only integers XXXXXXXXXXXXXXXXXX Don't ask this one
+
+# Test Cases
+# l = None, t = X -> []
+# l = [], t = X -> []
+# l = [1, 2, 3], t = 2 -> [3]
+# l = [1, 2, 3], t = 3 -> []
+# l = [1, 2, 3], t = 4 -> []
+# l = [1, 1, 1], t = 0 -> [1, 1, 1]
+# l = [-1, 0, 1], t = -2 -> [-1, 0, 1]
+# l = [8,2,13,11,4,10,14], t = 10 -> [13,11,14]
+
+## Plan
+
+# Iterate through the list, for each number, check to see if it's greater than the threshold,
+# and if it is, append it to a new list. Finally, return the new list.
+
+# 1. Check if the input list is null or empty. If so, return an empty list.
+# 2. Initialize an empty list as the result
+# 3. Loop through every number in the input list, check if the number is greater
+#    than the threshold. If so, append it to the result list.
+# 4. Return the result list
+# function above_threshold(lst, threshold)
+#
+#   if lst is null or if lst is empty
+#     return []
+#   end
+#
+#   result = []
+#
+#   loop for every num in the lst
+#     if num > threshold
+#       append num to result
+#     end
+#   end
+#
+#   return result
+#
+# end
+
+
+## Implement
+
+def above_threshold(lst, threshold):
+
+  if not(lst):
+    return []
+
+  result = []
+
+  for num in lst:
+    if num > threshold:
+      result.append(num)
+
+  return result
+
+# l = None, t = X -> []
+print(above_threshold(None, 5)) # []
+# l = [], t = X -> []
+print(above_threshold([], 5)) # []
+# l = [1, 2, 3], t = 2 -> [3]
+print(above_threshold([1, 2, 3], 2)) # [3]
+# l = [1, 2, 3], t = 3 -> []
+print(above_threshold([1, 2, 3], 3)) # []
+# l = [1, 2, 3], t = 4 -> []
+print(above_threshold([1, 2, 3], 4)) # []
+# l = [1, 1, 1], t = 0 -> [1, 1, 1]
+print(above_threshold([1, 1, 1], 0)) # [1, 1, 1]
+# l = [-1, 0, 1], t = -2 -> [-1, 0, 1]
+print(above_threshold([-1, 0, 1], -2)) # [-1, 0, 1]
+# l = [8,2,13,11,4,10,14], t = 10 -> [13,11,14]
+print(above_threshold([8,2,13,11,4,10,14], 10)) # [13, 11, 14]
+
