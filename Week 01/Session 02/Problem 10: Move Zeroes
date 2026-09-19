@@ -1,0 +1,46 @@
+"""
+Problem 10: Move Zeroes
+Write a function move_zeroes() that takes in an integer list nums and returns a new list with all the 0 values moved to the end of the list. The relative non-zero elements in the original list should be maintained.
+
+def move_zeroes(nums):
+    pass
+Example Usage:
+
+nums = [1,0,2,3,0,0,4]
+new_nums = move_zeroes(nums)
+print(new_nums)
+Example Output:
+
+[1,2,3,4,0,0,0]
+"""
+
+def move_zeroes(nums):
+    result = []
+    zeroes = 0
+
+    for num in nums:
+        if num != 0:
+            result.append(num)
+
+    zeroes = len(nums) - len(result)
+
+    return result + [0] * zeroes
+
+
+nums = [1,0,2,3,0,0,4]
+new_nums = move_zeroes(nums)
+print(new_nums)
+
+
+#%%-----------------------------------------------------
+
+def move_zeroes(nums):
+    non_zeroes = [x for x in nums if x != 0]
+    zero_count = len(nums) - len(non_zeroes)
+
+    return non_zeroes + [0] * zero_count
+
+nums = [1,0,2,3,0,0,4]
+new_nums = move_zeroes(nums)
+print(new_nums)
+
