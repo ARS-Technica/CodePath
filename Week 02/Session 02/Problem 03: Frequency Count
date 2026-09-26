@@ -8,6 +8,15 @@ Example Input: nums = [1, 2, 2, 3, 3, 3, 4]
 Example Output: {1: 1, 2: 2, 3: 3, 4: 1}
 """
 
+from collections import Counter
+
+def count_occurrences(nums):
+    # Simpliest, but doesn't validate inputs
+    return dict(Counter(nums))
 
 
+# Example Input: nums = [1, 2, 2, 3, 3, 3, 4]
+# Example Output: {1: 1, 2: 2, 3: 3, 4: 1}
 
+nums = ["A", 2, 2, 3, 3, 3, 4]
+print(count_occurrences(nums))
