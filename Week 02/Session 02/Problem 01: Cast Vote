@@ -18,3 +18,38 @@ Example Output:
 """
 
 
+def cast_vote(votes, candidate):
+    clean_votes = {}
+    
+    # 1. Clean up and merge all existing keys into lowercase
+    for existing_candidate, count in votes.items():
+        key = existing_candidate.lower().strip()
+        clean_votes[key] = clean_votes.get(key, 0) + count
+
+    # 2. Add the new vote (also in lowercase)
+    candidate_lower = candidate.lower()
+    clean_votes[candidate_lower] = clean_votes.get(candidate_lower, 0) + 1
+
+    # 3. Update the original dictionary in-place so changes persist
+    votes.clear()
+    votes.update(clean_votes)
+
+    return votes
+
+
+votes = {"Alice": 5, "Bob": 3}
+
+cast_vote(votes, "Alice")
+print(votes)
+
+cast_vote(votes, "Gina")
+print(votes)
+
+cast_vote(votes, "alice")
+print(votes)
+
+cast_vote(votes, "bOb")
+print(votes)
+
+# {'alice': 7, 'bob': 4, 'gina': 1}
+
