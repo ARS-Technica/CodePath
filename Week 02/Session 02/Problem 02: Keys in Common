@@ -16,5 +16,25 @@ Example Output:
 """
 
 
+def common_keys(dict1, dict2):
+    # return list(dict1.keys() & dict2.keys())
+    common_list = []
 
+    keys1 = {key.lower() for key in dict1}
+    keys2 = {key.lower() for key in dict2}
+
+    for key in keys1:
+        if keys2:
+            if key in keys2:
+                common_list.append(key)
+
+    return common_list
+
+
+dict1 = {"a": 1, "b": 2, "c": 3}
+dict2 = {"b": 4, "c": 5, "d": 6}
+common_list = common_keys(dict1, dict2)
+print(common_list)
+
+# ['b', 'c'] 
 
