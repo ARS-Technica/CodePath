@@ -31,7 +31,22 @@ def swap_ends(my_str):
     # A string with fewer than two characters has no distinct ends to swap
     if len(my_str) <= 1:
         return my_str
-    return my_str[-1:] + my_str[1:-1] + my_str[:1]
+
+    # Last character + middle slice + first character
+    return my_str[-1] + my_str[1:-1] + my_str[0]
+
+#%%
+
+def swap_ends(my_str):
+    if not isinstance(my_str, str):
+        raise TypeError("Expected input to be a string")
+        
+    if len(my_str) <= 1:
+        return my_str
+
+    return my_str[-1] + my_str[1:-1] + my_str[0]
+
+#%%
 
 # Example Usage:
 
