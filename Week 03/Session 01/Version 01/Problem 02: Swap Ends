@@ -1,0 +1,89 @@
+"""
+Problem 2: Swap Ends
+
+Write a function swap_ends() that accepts a string my_str as a parameter and returns a new string where the first and last characters from my_str are swapped.
+"""
+
+"""
+U-nderstand
+Understand what the interviewer is asking for by using test cases and questions about the problem.
+
+Will the string ever be empty?
+Potentially, yes. Your code should allow for this.
+"""
+
+"""
+P-lan
+Plan the solution with appropriate visualizations and pseudocode.
+
+General Idea: Slice the input string into three components and then combine them at the end.
+
+1) If the string has fewer than two characters, return it unchanged (there are no distinct ends to swap)
+2) Slice the last character from the input string
+3) Slice the middle (excluding the first and last) characters from the input string
+4) Slice the first character from the input string
+5) Return these three components added together in the order: last, middle, first
+"""
+
+# I-mplement
+
+def swap_ends(my_str):
+    # A string with fewer than two characters has no distinct ends to swap
+    if len(my_str) <= 1:
+        return my_str
+    return my_str[-1:] + my_str[1:-1] + my_str[:1]
+
+# Example Usage:
+
+my_str = "boat"
+swapped = swap_ends(my_str)
+print(swapped)
+
+# Example Output: toab
+
+my_str = "try"
+swapped = swap_ends(my_str)
+print(swapped)
+
+# Example Output: yrt
+
+my_str = "me"
+swapped = swap_ends(my_str)
+print(swapped)
+
+# Example Output: em
+
+my_str = "a"
+swapped = swap_ends(my_str)
+print(swapped)
+
+# Example Output: a
+
+my_str = ""
+swapped = swap_ends(my_str)
+print(swapped)
+
+my_str = None
+swapped = swap_ends(my_str)
+print(swapped)
+
+# Example Output: None
+
+"""
+✨ AI Hint: String Indexing
+Key Skill: Use AI to explain code concepts
+
+This problem requires you to be familiar with indexing characters in a string. In Python, we can use square brackets to index and slice subsections of a string in the same way we would index or slice a list.
+
+If you'd still like to see more examples or ask follow-up questions, try using an AI tool like ChatGPT or GitHub Copilot. You can use the following prompt as a starting point:
+
+"You're an expert computer science tutor. Please provide an examples of string indexing in Python, and explain how it compares to list indexing."
+"""
+
+"""
+💡 What's the difference between strings and lists?
+In many ways, Python lists and strings are very similar, but they also have some key differences. The difference between strings and lists is not strictly required to solve the exercises in this problem set, however we highly recommend you take a moment to explore the difference between the two data types when you have time.
+
+For your convenience, we've included a section comparing strings and lists in the Unit 3 Cheatsheet, and as always you should practice your independent research skills by using search engines and AI tools to dive deeper!
+"""
+
